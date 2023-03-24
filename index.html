@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <title>Scrollama: Sticky Overlay Example</title>
+    <meta name="description" content="Scrollama: Sticky Overlay Example" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      #scrolly {
+        position: relative;
+        background-color: #f3f3f3;
+        padding: 1rem;
+      }
+
+      article {
+        position: relative;
+        padding: 0;
+        max-width: 20rem;
+        margin: 0 auto;
+      }
+
+      .sticky-thing {
+        position: -webkit-sticky;
+        position: sticky;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        background-color: #ffffff;
+        z-index: 0;
+        top: 12.5vh;
+        height: 80vh;
+        /* Center everything inside */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* background-image: url('images/15ani.png'); */
+        background-size: contain;
+        background-repeat: no-repeat;      
+        background-position: center center;
+      }
+
+      .sticky-thing p {
+        font-size: 8rem;
+        font-weight: 900;
+        color: #fff;
+      }
+
+      .step {
+        margin: 0 auto 2rem auto;
+        margin-bottom: 30rem;
+        color: #fff;
+        background-color: #ffffffb0;
+      }
+
+      .step:last-child {
+        margin-bottom: 0;
+      }
+
+      .step.is-active p {
+        background-color: rgba(255, 255, 255, 0.301);
+        color: #3b3b3b;
+      }
+
+      .step p {
+        text-align: center;
+        padding: 1rem;
+        font-size: 1.2rem;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        background-color: #ffffff56;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+        <section id="intro">
+        <h1 class="intro__sub"><b>Trei decenii de tranziție</h1> 
+        <h1 class="intro__hed"><b>CUM ERA VIAȚA PENTRU CINEVA DE VÂRSTA TA ÎN ANII '90</h1>
+        <p class="intro__dek">
+          <a href="https://panorama.ro/author/edit/">Edit Gyenge</a>
+          </p>
+
+        <p class="intro__scroll">
+            Scroll
+                        
+            </p>  
+        
+            
+       <p>
+        <img src="images/button.png" alt="scroll down" width="50" height="60">
+                          
+              </p>   
+        
+        <div class="dropdown">
+          <button class="dropbtn">Selectează vârsta</button>
+          <div class="dropdown-content">
+            <a href="#scrolly">15-19 ani</a>
+            <a href="#">20-24 ani</a>
+          <a href="#">25-30 ani</a>
+        </div>
+
+        
+      </div>
+
+      
+      </section>
+
+      <section id="scrolly">
+        <div class="sticky-thing" data-image="1519ani.png">
+          <p></p>
+        </div>
+
+        <article>
+          <div class="step" data-step="1" data-color="black" data-image="1519ani.gif">
+            <p class="intro__title">
+              Căsătoriile în 1990                            
+            </p>  
+            
+                
+            <p>Dacă erai o adolescentă în 1990, erau șanse mari să fii măritată înainte să împlinești 20 de ani. În 30% dintre căsătoriile oficiate la acea vreme, soția avea sub 20 de ani. Băieții nu se însurau chiar atât de devreme. </p>
+          </div>
+          
+          <div class="step" data-step="2" data-color="green" data-image="casatorii.svg">
+            <p class="intro__title">
+              Căsătoriile în 2021                          
+            </p>  
+            <p>30 de ani mai târziu, lucrurile s-au schimbat enorm. Numărul căsătoriilor în care soția are sub 20 de ani a scăzut de 10 ori.</p>
+          </div>
+          <div class="step" data-step="3" data-color="blue" data-image="casatorii2.png">
+            
+            <p>Astăzi, din totalul căsătoriilor, în doar 5% dintre ele fetele au vârsta sub 20 de ani.</p>
+          </div>
+
+          <div class="step" data-step="4" data-color="red" data-image="nascutivii.png">
+            <p class="intro__title">
+              Copii                          
+            </p>  
+            <p>Vârsta la care deveneau mame în urmă cu 30 de ani era mică. Și chiar dacă au trecut 30 de ani, când vine vorba de mamele minore, lucrurile nu s-au schimbat.</p>
+          </div>
+
+          <div class="step" data-step="5" data-color="blue" data-image="nascutivii2.png">
+            
+            <p>în 2021, numărul copiilor din mame minore a fost cu aproape 200 mai mare.</p>
+          </div>
+
+          <div class="step" data-step="6" data-color="blue" data-image="nascutivii3.png">
+            
+            <p>Iar dacă vorbim de fetele puțin mai mari, numărul celor care devin mame în adolescență este mult mai mic. Cu 30 de mii mai mic.</p>
+          </div>
+
+          <div class="step" data-step="7" data-color="blue" data-image="nascutivii3.png">
+            <p class="intro__title">
+              Divorțuri                          
+            </p>  
+            <p>Iar dacă vorbim de fetele puțin mai mari, numărul celor care devin mame în adolescență este mult mai mic. Cu 30 de mii mai mic.</p>
+          </div>
+        </article>
+      </section>
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+      <section id="outro"></section>
+    </main>
+
+    <!-- <div class='debug'></div> -->
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://unpkg.com/scrollama"></script>
+    <script>
+      // DOM - document object model
+      var main = document.querySelector("main");
+      var scrolly = main.querySelector("#scrolly");
+      var sticky = scrolly.querySelector(".sticky-thing");
+      var article = scrolly.querySelector("article");
+      var steps = article.querySelectorAll(".step");
+
+      // initialize the scrollama
+      var scroller = scrollama();
+
+      // generic window resize listener event
+		function handleResize() {
+			// 1. update height of step elements
+			var stepH = Math.floor(window.innerHeight * 0.75);
+			step.style("height", stepH + "px");
+
+			var figureHeight = window.innerHeight / 2;
+			var figureMarginTop = (window.innerHeight - figureHeight) / 2;
+
+			figure
+				.style("height", figureHeight + "px")
+				.style("top", figureMarginTop + "px");
+
+			// 3. tell scrollama to update new element dimensions
+			scroller.resize();
+		}
+
+      // scrollama event handlers
+      function handleStepEnter(response) {
+        // response = { element, direction, index }
+        var el = response.element;
+        console.log(el);
+        
+        // remove is-active from all steps
+        // then add is-active to this step
+        steps.forEach(step => step.classList.remove('is-active'));
+        el.classList.add('is-active');
+
+        // update graphic based on step
+        // use "template literals" with backticks
+        
+        console.log(el.dataset.image);
+        sticky.style.backgroundImage = `url(images/${el.dataset.image})`;
+        sticky.querySelector("p").style.fontSize = `${el.dataset.step}rem`;
+      }
+
+      function init() {
+        // 2. setup the scroller passing options
+        // 		this will also initialize trigger observations
+        // 3. bind scrollama event handlers (this can be chained like below)
+        scroller
+          .setup({
+            step: "#scrolly article .step",
+            offset: 0.40,
+            debug: false
+          })
+          .onStepEnter(handleStepEnter);
+
+        // setup resize event
+        window.addEventListener("resize", scroller.resize);
+      }
+
+      // Get the button:
+      let mybutton = document.getElementById("myBtn");
+
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+
+      function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+     } else {
+      mybutton.style.display = "none";
+     }
+  }
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+      // kick things off
+      init();
+    </script>
+  </body>
+</html>
