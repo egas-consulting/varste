@@ -9,7 +9,7 @@ body {
 }
 
 body {
-  font-family: Roboto, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   min-height: 1280px;
   color: #3b3b3b;
   font-size: 1rem;
@@ -117,8 +117,9 @@ nav {
 
 /* Dropdown Button */
 .dropbtn {
-  background-color: #04AA6D;
+  background-color: #000000 !important;
   color: white;
+  position: center;
   padding: 16px;
   font-size: 16px;
   border: none;
@@ -155,7 +156,7 @@ nav {
 .dropdown:hover .dropdown-content {display: block;}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
+.dropdown:hover .dropbtn {background-color: #272727;}
 
 #myBtn {
   display: none; /* Hidden by default */
@@ -182,4 +183,79 @@ nav {
     margin-top: 0;
     margin-left: 2rem;
   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /* Popup container */
+ .popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 320px;
+  background-color: #ffffff;
+  color: #464646 !important;
+  text-align: center;
+  border-radius: 6px;
+  padding: 0px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 0%;
+  margin-left: 0px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+} 
+
+
+.icons {
+  display: block;  
+  margin-left: auto;
+  margin-right: auto;
+  width: 95px;
 }
