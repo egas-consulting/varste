@@ -167,7 +167,7 @@ nav {
   z-index: 99; /* Make sure it does not overlap */
   border: none; /* Remove borders */
   outline: none; /* Remove outline */
-  background-color: red; /* Set a background color */
+  background-color: rgb(0, 0, 0); /* Set a background color */
   color: white; /* Text color */
   cursor: pointer; /* Add a mouse pointer on hover */
   padding: 15px; /* Some padding */
@@ -203,6 +203,7 @@ nav {
   position: relative;
   display: inline-block;
   cursor: pointer;
+  
 }
 
 
@@ -215,11 +216,11 @@ nav {
   color: #464646 !important;
   text-align: center;
   border-radius: 6px;
-  padding: 0px 0;
+  padding-left: 0%;
+  padding-right: 0%;
   position: absolute;
   z-index: 1;
-  bottom: 125%;
-  left: 0%;
+  bottom: 2%;
   margin-left: 0px;
 }
 
@@ -228,7 +229,7 @@ nav {
   content: "";
   position: absolute;
   top: 100%;
-  left: 50%;
+  left: 0%;
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
