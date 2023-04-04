@@ -111,6 +111,15 @@ nav {
   margin-bottom: 50px;
 }
 
+
+.intro__categ {
+  color: #000000;
+  margin: 0rem 0rem 0rem 0rem;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  
+}
+
 #outro {
   height: 640px;
 }
